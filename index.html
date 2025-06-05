@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Baby! 🎉</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(to top right, #ffdde1, #ee9ca7);
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    h1, p {
+      text-align: center;
+      color: white;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4rem;
+      margin-top: 100px;
+      animation: glow 2s infinite alternate;
+    }
+
+    p {
+      font-size: 1.5rem;
+      padding: 0 20px;
+      max-width: 800px;
+      margin: 20px auto;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff69b4;
+      }
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #ff1493;
+      }
+    }
+
+    .heart {
+      width: 100px;
+      height: 90px;
+      position: absolute;
+      animation: float 8s ease-in-out infinite;
+      background: url('https://em-content.zobj.net/thumbs/120/apple/354/growing-heart_1f497.png') no-repeat;
+      background-size: contain;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .balloon {
+      position: absolute;
+      width: 80px;
+      animation: rise 10s infinite ease-in-out;
+    }
+
+    @keyframes rise {
+      0% { bottom: -100px; }
+      100% { bottom: 110%; }
+    }
+
+    .firework {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .left img, .right img {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      padding-top: 400px;
+    }
+    img{
+      size: 700px;
+    }
+    
+    .message-box {
+      background: rgba(255, 255, 255, 0.384);
+      border-radius: 20px;
+      padding: 20px;
+      margin: 30px auto;
+      max-width: 600px;
+      color: rgb(17, 17, 17);
+      font-size: 1.3rem;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="perfect_sped_up_status.mp3" type="audio/mp3">
+  </audio>
+
+  <div class="container text-center">
+    <div class="row">
+      <div class="col-2 left">
+          <picture>
+            <img src="bubu-dudu-sseeyall.gif" alt="Birthday GIF 2">
+          </picture>
+      </div>
+
+      <div class="col-8">
+        <h1>Happy 22nd Birthday, Baby! 💖</h1>
+        <p>You make every day feel like magic. I love you more than words can ever say.</p>
+        <div class="message-box">
+          You are the spark in my every moment, the melody in my silence, and the smile behind every heartbeat I feel. 🎶❤️<br><br>
+          Today is your day, and this is my little gift to you. May it make you smile, the way you always do for me. 💫<br><br>
+          Forever yours,<br>
+          <strong>Love</strong> 💌
+        </div>
+      </div>
+
+
+      <div class="col-2 right">
+        <picture>
+          <img src="bubu-dudu-dudu-dance.gif" alt="Birthday GIF 1">
+        </picture>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating hearts -->
+  <script>
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+
+  <!-- Fireworks and confetti -->
+  <canvas class="firework" id="canvas"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
+  <script>
+    const confettiSettings = { target: 'canvas', max: 150, size: 1.5 };
+    const confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();
+  </script>
+</body>
+</html>
